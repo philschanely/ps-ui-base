@@ -1,0 +1,57 @@
+---
+notes: |
+  For common use in a toolbars or other groups place as many buttons as desired inside a container with the `.btn-bar` class.
+
+  Compress the space between such buttons with `.btn-bar--tight`.
+
+  Implement dividers by adding `.btn--left-divider` or `.btn--right-divider` on the appropriate element.
+
+  Button bars can also implement classes that affect all the child buttons in order to simplifythe markup. These can be user individually and in combination:
+
+  * `.btn-bar--small` to make all contained buttons be small buttons.
+  * `.btn-bar--icons` makes all contained buttons icon buttons.
+  * `.btn-bar--clear` makes all contained buttons clear buttons.
+  * `.btn-bar--tight` compresses the spacing between buttons to conserve overall space.
+
+---
+<div class="btn-bar">
+  <button class="btn--primary">Submit</button>
+  <button class="btn--success">Subscribe</button>
+  <button class="btn--danger">Delete</button>
+  <button class="btn--info btn--left-divider">Submit</button>
+  <button class="btn--nav">Discussion</button>
+  <a class="btn btn--success btn--icon" href="#">
+    <i class="icon icon--key"></i>
+  </a>
+</div>
+<div class="btn-bar btn-bar--small">
+  <button class="btn--danger">Delete</button>
+  <button class="btn--info btn--right-divider">Submit</button>
+  <button class="btn--nav">Discussion</button>
+  <button class="btn--primary">Submit</button>
+  <a class="btn btn--danger btn--icon" href="#">
+    <i class="icon icon--close"></i>
+  </a>
+</div>
+<div class="btn-bar btn-bar--icons">
+  <a class="btn btn--success" href="#">
+    <i class="icon icon--email"></i>
+  </a>
+  <a class="btn btn--success" href="#">
+    <i class="icon icon--key"></i>
+  </a>
+  <a class="btn btn--danger btn--left-divider" href="#">
+    <i class="icon icon--trash"></i>
+  </a>
+  <a class="btn btn--alert" href="#">
+    <i class="icon icon--folder"></i>
+  </a>
+</div>
+<div class="btn-bar btn-bar--clear btn-bar--icons btn-bar--tight">
+  <a class="btn btn--success" href="#">
+    <i class="icon icon--email"></i>
+  </a>
+  <a class="btn btn--success" href="#">
+    <i class="icon icon--key"></i>
+  </a>
+</div>

@@ -1,0 +1,158 @@
+// Mixins
+@mixin responsive-br() {
+  &.br--sm-smartphone-only {
+    @media screen and (min-width: $width-mobile) {
+      display: none;
+    }
+  }
+
+  &.br--smartphone-only {
+    display: none;
+    @media screen and (min-width: $width-mobile) {
+      display: inline;
+    }
+    @media screen and (min-width: $width-tablet) {
+      display: none;
+    }
+  }
+
+  &.br--tablet-only {
+    display: none;
+    @media screen and (min-width: $width-tablet) {
+      display: inline;
+    }
+    @media screen and (min-width: $width-desktop) {
+      display: none;
+    }
+  }
+
+  &.br--desktop-only {
+    display: none;
+    @media screen and (min-width: $width-desktop) {
+      display: inline;
+    }
+  }
+
+  &.br--not-sm-smartphone {
+    @media screen and (max-width: $width-mobile) {
+      display: none;
+    }
+  }
+
+  &.br--not-smartphone {
+    @media screen and (min-width: $width-mobile) {
+      display: none;
+    }
+    @media screen and (min-width: $width-tablet) {
+      display: inline;
+    }
+  }
+
+  &.br--not-tablet {
+    @media screen and (min-width: $width-tablet) {
+      display: none;
+    }
+    @media screen and (min-width: $width-desktop) {
+      display: inline;
+    }
+  }
+
+  &.br--not-desktop {
+    @media screen and (min-width: $width-desktop) {
+      display: none;
+    }
+  }
+}
+@mixin text-body() {
+  padding-top: $pad-top-body;
+  padding-bottom: $pad-bottom-body;
+  @include text-setup;
+}
+@mixin text-button() {
+  @include text-setup();
+  text-align: center;
+}
+@mixin text-group-heading {
+  @include text-h5;
+  @include bbox;
+  @include responsive-pad-both;
+  background-color: $color-body-xlt;
+  text-align: left;
+
+  & > .btn,
+  & > .icon,
+  & > button {
+    margin-top: -15px;
+    margin-bottom: -15px;
+  }
+}
+@mixin text-h1() {
+  padding-top: $pad-top-h1;
+  padding-bottom: $pad-bottom-h1;
+  @include text-setup($size: $size-h1, $weight: 700, $leading: $baseline * 4, $color: $color-primary);
+}
+@mixin text-h2() {
+  padding-top: $pad-top-h2;
+  padding-bottom: $pad-bottom-h2;
+  @include text-setup($size: $size-h2, $weight: 700, $leading: $baseline * 3, $color: $color-secondary);
+}
+@mixin text-h3() {
+  padding-top: $pad-top-h3;
+  padding-bottom: $pad-bottom-h3;
+  @include text-setup($size: $size-h3, $weight: 600, $color: $color-secondary);
+}
+@mixin text-h4() {
+  padding-top: $pad-top-h4;
+  padding-bottom: $pad-bottom-h4;
+  @include text-setup($size: $size-h4, $weight: 600, $style: italic, $color: $color-secondary);
+}
+@mixin text-h5() {
+  padding-top: $pad-top-h5;
+  padding-bottom: $pad-bottom-h5;
+  @include text-setup($size: $size-h5, $weight: 600, $color: $color-secondary);
+}
+@mixin text-h6() {
+  padding-top: $pad-top-h6;
+  padding-bottom: $pad-bottom-h6;
+  @include text-setup($size: $size-h6, $weight: 700, $color: $color-primary-dk, $transform: uppercase);
+}
+@mixin text-info() {
+  padding-top: $pad-top-inline;
+  padding-bottom: $pad-bottom-inline;
+  @include text-setup($size: $size-inline, $color: $color-body-md);
+}
+@mixin text-label() {
+  padding-top: $pad-top-body;
+  padding-bottom: $pad-bottom-body;
+  @include text-setup($color: $color-body, $size: $size-body, $weight: 600);
+}
+@mixin text-label-inline() {
+  @include text-setup($color: $color-body, $size: $size-inline, $weight: 600);
+}
+@mixin text-lead() {
+  padding-top: $pad-top-lead;
+  padding-bottom: $pad-bottom-lead;
+  @include text-setup($size: $size-lead, $leading: $baseline * 2, $weight: 200);
+}
+@mixin text-setup($font:$font-main, $size:$size-body, $leading: $baseline * 2, $color:$color-body, $weight:200, $style:normal, $transform:none, $color-on-dark: $color-light) {
+  color: $color;
+  font-family: $font;
+  font-size: $size;
+  font-style: $style;
+  font-weight: $weight;
+  line-height: $leading;
+  text-transform: $transform;
+
+  .dark-text & {
+    color: $color-on-dark;
+  }
+}
+@mixin text-th() {
+  padding-top: $pad-top-th;
+  padding-bottom: $pad-bottom-th;
+  @include text-setup($size: $size-th, $leading: $baseline * 2, $weight: 600, $transform: uppercase, $color: $color-primary-dk);
+}
+@mixin text-term() {
+  width: $col;
+  @include text-label;
+}

@@ -1,0 +1,111 @@
+.btn,
+button {
+    @include button;
+}
+
+.btn-bar {
+    @include btn-bar;
+
+    td > & {
+        position: relative;
+        top: -2px;
+        margin-top: -1 * $baseline / 2;
+        margin-bottom: -1 * (($baseline / 2) + 2);
+    }
+
+    .btn--right-divider {
+        position: relative;
+
+        &::after {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            right: -1 * $half-pad;
+            @media screen and (min-width: $width-tablet) {
+                right: -1 * $half-pad-tab;
+            }
+            @media screen and (min-width: $width-desktop) {
+                right: -1 * $half-pad-desk;
+            }
+            border-right: 1px solid $color-dark;
+            margin-right: -0.5px;
+            width: 0;
+            height: 100%;
+        }
+    }
+
+    .btn--left-divider {
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: -1 * $half-pad;
+            @media screen and (min-width: $width-tablet) {
+                left: -1 * $half-pad-tab;
+            }
+            @media screen and (min-width: $width-desktop) {
+                left: -1 * $half-pad-desk;
+            }
+            border-left: 1px solid $color-dark;
+            margin-left: -0.5px;
+            width: 0;
+            height: 100%;
+        }
+    }
+}
+
+.btn-bar--centered {
+    justify-content: center;
+}
+
+.btn-bar--clear {
+    .btn,
+    button {
+        @extend .btn.btn--clear;
+    }
+}
+
+.btn-bar--icons {
+    .btn,
+    button {
+        @extend .btn.btn--icon;
+    }
+}
+
+.btn-bar--small {
+    .btn,
+    button {
+        @extend .btn.btn--small;
+    }
+}
+
+.btn-bar--tight {
+    & > * {
+        margin-right: 1px;
+        margin-left: 0;
+    }
+
+    .btn--left-divider {
+        margin-left: $pad;
+        @media screen and (min-width: $width-tablet) {
+            margin-left: $pad-tab;
+        }
+        @media screen and (min-width: $width-desktop) {
+            margin-left: $pad-desk;
+        }
+    }
+
+    .btn--right-divider {
+        margin-right: $pad;
+        @media screen and (min-width: $width-tablet) {
+            margin-right: $pad-tab;
+        }
+        @media screen and (min-width: $width-desktop) {
+            margin-right: $pad-desk;
+        }
+    }
+}

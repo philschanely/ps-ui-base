@@ -1,0 +1,68 @@
+body {
+    @include bbox;
+    @include text-body;
+    padding: 0;
+    min-height: 100vh;
+}
+
+html {
+    font-size: $size-root;
+    min-height: 100vh;
+
+    &.grid-on {
+        background: white;
+
+        body {
+            background: url("../images/grid-mobile.png") left top repeat;
+            @media screen and (min-width: $width-tablet) {
+                background: url("../images/grid-tablet.png") left top repeat;
+            }
+            @media screen and (min-width: $width-desktop) {
+                background: url("../images/grid-desktop.png") left top repeat;
+            }
+        }
+    }
+}
+
+img {
+    max-width: 100%;
+
+    &.img--no-max {
+        max-width: inherit;
+    }
+}
+
+.img--centered {
+    display: block;
+    @include center;
+}
+
+.img--circle {
+    border-radius: 50%;
+}
+
+.image-protector {
+    @include media-protector;
+}
+
+main {
+    @include bbox;
+    transition: 0.2s filter linear;
+    min-height: 100vh;
+    margin-top: -1 * $height-header;
+    margin-bottom: -1 * $height-footer;
+    padding-top: $height-header;
+    padding-bottom: $height-footer + $baseline * 3;
+}
+
+.main--no-wrap {
+    min-height: inherit;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.overflow-wrapper {
+    overflow-x: hidden;
+}

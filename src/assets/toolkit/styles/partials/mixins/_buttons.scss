@@ -1,0 +1,170 @@
+@mixin btn-setup-normal($color, $color-dk, $color-foreground-hover, $color-foreground: $color-light) {
+    color: $color-foreground;
+    background-color: $color;
+    position: relative;
+
+    &:hover {
+        color: $color-foreground-hover;
+        background-color: $color-dk;
+    }
+
+    &.btn--clear {
+        color: $color;
+        background-color: transparent;
+
+        &:hover {
+            color: $color-dk;
+            background-color: transparent;
+        }
+    }
+}
+@mixin button() {
+    @include bbox;
+    @include text-button;
+    cursor: pointer;
+    display: inline-block;
+    outline: none;
+    border: none;
+    border-radius: 2px;
+    background-color: transparent;
+    transition: 0.2s all linear;
+    margin-bottom: $baseline;
+    vertical-align: middle;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    position: relative;
+    @include responsive-pad-both();
+    @include btn-setup-normal($color-neutral, $color-dark, $color-light);
+    height: $baseline * 3;
+    min-width: ($col-inner * 2) + $gutter;
+    @media screen and (min-width: $width-tablet) {
+        min-width: ($col-inner-tab * 2) + $gutter-tab;
+    }
+    @media screen and (min-width: $width-desktop) {
+        min-width: $col-inner-desk + $gutter-desk;
+    }
+
+    .icon {
+        position: relative;
+        top: -5px;
+        @extend .icon;
+        line-height: 1.7;
+    }
+
+    &.btn--primary {
+        @include btn-setup-normal($color-primary, $color-primary-dk, $color-primary-lt);
+    }
+
+    &.btn--secondary {
+        @include btn-setup-normal($color-secondary, $color-secondary-dk, $color-secondary-lt);
+    }
+
+    &.btn--accent {
+        @include btn-setup-normal($color-accent, $color-accent-dk, $color-accent-lt);
+    }
+
+    &.btn--success {
+        @include btn-setup-normal($color-success, $color-success-dk, $color-success-lt);
+    }
+
+    &.btn--alert {
+        @include btn-setup-normal($color-alert, $color-alert-dk, $color-alert-lt, $color-alert-dk);
+    }
+
+    &.btn--danger {
+        @include btn-setup-normal($color-danger, $color-danger-dk, $color-danger-lt);
+    }
+
+    &.btn--info {
+        @include btn-setup-normal($color-info, $color-info-dk, $color-info-lt);
+    }
+
+    &.btn--nav {
+        @include btn-setup-normal($color-nav, $color-nav-dk, $color-nav-lt);
+    }
+
+    &.btn--icon {
+        min-width: inherit;
+        width: $col-inner + $gutter;
+        @include responsive-pad-both(0, 0, $pad-desk);
+        @media screen and (min-width: $width-tablet) {
+            width: $col-inner-tab + $gutter-tab;
+        }
+        @media screen and (min-width: $width-desktop) {
+            width: auto;
+        }
+    }
+
+    &.btn--clear {
+        padding-left: 5px;
+        padding-right: 5px;
+        width: auto;
+        min-width: inherit;
+        @media screen and (min-width: $width-tablet) {
+            min-width: inherit;
+        }
+        @media screen and (min-width: $width-desktop) {
+            min-width: inherit;
+        }
+    }
+
+    &.btn--small {
+        height: $baseline * 2;
+        font-size: $size-inline;
+        font-weight: 600;
+        padding-top: 0;
+        padding-bottom: 0;
+        min-width: inherit;
+        margin-top: $baseline / 2;
+        margin-bottom: $baseline / 2;
+
+        .icon {
+            @extend .icon.icon--sm;
+            line-height: 1;
+            top: 2px;
+        }
+
+        &.btn--icon {
+            min-width: inherit;
+            width: auto;
+            @include responsive-pad-both(10px, 10px, 10px);
+            @media screen and (min-width: $width-tablet) {
+                width: auto;
+            }
+            @media screen and (min-width: $width-desktop) {
+                width: auto;
+            }
+        }
+    }
+
+    &.btn--center {
+        width: 300px;
+        display: block;
+        margin: $baseline auto $baseline * 2;
+    }
+}
+@mixin btn-bar() {
+    @include flex;
+    flex-flow: row wrap;
+
+    & > * {
+        margin-left: $half-pad;
+        margin-right: $half-pad;
+
+        &:first-child {
+            margin-left: 0;
+        }
+
+        &:last-child {
+            margin-right: 0;
+        }
+        @media screen and (min-width: $width-tablet) {
+            margin-left: $half-pad-tab;
+            margin-right: $half-pad-tab;
+        }
+        @media screen and (min-width: $width-desktop) {
+            margin-left: $half-pad-desk;
+            margin-right: $half-pad-desk;
+        }
+    }
+}

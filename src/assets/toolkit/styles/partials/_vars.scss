@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,600,600i,700,700i');
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:400,700');
+
+// Fonts
+$font-main: 'Source Sans Pro', sans-serif;
+$font-mono: 'Source Code Pro', monospace;
+
+// Brand Colors
+$color-primary:      #5766FA;
+$color-primary-dk:   #343B7A;
+$color-primary-lt:   #A9B0F7;
+$color-secondary:    #ED3F88;
+$color-secondary-dk: #A12B5C;
+$color-secondary-lt: #F498BF;
+$color-accent:       #0FB6EF;
+$color-accent-dk:    #0D6D8D;
+$color-accent-lt:    #93DBF3;
+$color-body:         #46474D;
+$color-body-md:      #7D8089;
+$color-body-lt:      #BEC0C9;
+$color-body-xlt:     #F1F2F5;
+
+// App colors
+$color-light:      $color-body-xlt;
+$color-dark:       $color-body;
+$color-danger:     #EE5041;
+$color-danger-dk:  #7F251D;
+$color-danger-lt:  #F1ACA5;
+$color-alert:      #E6B837;
+$color-alert-dk:   #917423;
+$color-alert-lt:   #EFDCA9;
+$color-success:    #32D457;
+$color-success-dk: #208437;
+$color-success-lt: #A9F1B9;
+$color-info:       #AD60D7;
+$color-info-dk:    #5C2C76;
+$color-info-lt:    #D1ACE5;
+$color-nav:        $color-accent;
+$color-nav-dk:     $color-accent-dk;
+$color-nav-lt:     $color-accent-lt;
+$color-neutral:    $color-body-md;
+$color-neutral-dk: $color-body;
+$color-neutral-lt: $color-body-lt;
+
+// Font size settings
+$size-root:      10px;
+$size-h1:        4rem;
+$size-h2:        3rem;
+$size-h3:        2.2rem;
+$size-h4:        $size-h3;
+$size-body:      1.6rem;
+$size-inline:    1.2rem;
+$size-h5:        $size-body;
+$size-h6:        $size-inline;
+$size-th:        $size-inline;
+$size-label:     $size-inline;
+$size-lead:      $size-h4;
+$size-icon-xs:   $size-inline;
+$size-icon-sm:   $size-body;
+$size-icon:      2.1rem;
+$size-icon-lg:   2.8rem;
+$size-icon-xl:   3.8rem;
+$size-icon-xxl:  5.4rem;
+$size-icon-xxxl: 7.2rem;
+
+// Typography grid size and spacing
+$baseline:          12px;
+$pad-top-body:      6px;
+$pad-bottom-body:   6px;
+$pad-top-inline:    8px;
+$pad-bottom-inline: 4px;
+$pad-top-h1:        10px;
+$pad-bottom-h1:     2px;
+$pad-top-h2:        6px;
+$pad-bottom-h2:     6px;
+$pad-top-h3:        4px;
+$pad-bottom-h3:     8px;
+$pad-top-h4:        4px;
+$pad-bottom-h4:     8px;
+$pad-top-h5:        6px;
+$pad-bottom-h5:     6px;
+$pad-top-h6:        $pad-top-inline;
+$pad-bottom-h6:     $pad-bottom-inline;
+$pad-top-th:        $pad-top-inline;
+$pad-bottom-th:     $pad-bottom-inline;
+$pad-top-lead:      $pad-top-h4;
+$pad-bottom-lead:   $pad-bottom-h4;
+
+// Responsive layout widths
+$width-mobile: 318px;
+$width-tablet: 768px;
+$width-desktop: 1200px;
+
+// Footer height for sticky footer and header
+$height-footer: $baseline * 5;
+$height-header: $baseline * 6;
+
+// Mobile layout grid sizes
+$gutter:    20px;
+$pad:       $gutter / 2;
+$half-pad:  $pad / 2;
+$col:       53px; // 1/6 of 318
+$col-inner: $col - $gutter;
+
+// Tablet layout grid sizes
+$gutter-tab:    20px;
+$pad-tab:       $gutter-tab / 2;
+$half-pad-tab:  $pad-tab / 2;
+$col-tab:       64px; // 1/12 of 768
+$col-inner-tab: $col-tab - $gutter-tab;
+
+// Desktop layout grid sizes
+$gutter-desk:    30px;
+$pad-desk:       $gutter-desk / 2;
+$half-pad-desk:  $pad-desk / 2;
+$col-desk:       100px; // 1/12 of 1200
+$col-inner-desk: $col-desk - $gutter-desk;

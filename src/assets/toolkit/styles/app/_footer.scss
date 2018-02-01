@@ -1,0 +1,10 @@
+footer {
+  @include bbox;
+  height: $height-footer;
+  padding-top: $baseline * 3;
+  p {
+    text-align: center;
+    font-weight: 300;
+    width: 100%;
+  }
+}

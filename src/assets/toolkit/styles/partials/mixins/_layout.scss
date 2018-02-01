@@ -1,0 +1,123 @@
+@mixin bbox() {
+    box-sizing: border-box;
+}
+@mixin center($width:auto) {
+    display: block;
+    margin: 0 auto;
+    width: $width;
+}
+@mixin device-col($device, $ratio) {
+    @include bbox;
+    @include responsive-pad-both();
+
+    &.no-pad {
+        @include responsive-pad-both(0, 0, 0);
+    }
+
+    &.pad-right {
+        @include responsive-pad-left(0, 0, 0);
+    }
+
+    &.pad-left {
+        @include responsive-pad-right(0, 0, 0);
+    }
+    @media screen and (min-width: $device) {
+        width: $ratio * 100%;
+    }
+}
+@mixin fill-padding() {
+    margin-left: $pad * -1;
+    margin-right: $pad * -1;
+    @media screen and (min-width:$width-tablet) {
+        margin-left: $pad-tab * -1;
+        margin-right: $pad-tab * -1;
+    }
+    @media screen and (min-width:$width-desktop) {
+        margin-left: $pad-desk * -1;
+        margin-right: $pad-desk * -1;
+    }
+}
+@mixin flex() {
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+}
+@mixin grid-col($ratio:1) {
+    @include bbox;
+    width: $ratio * 100%;
+    @include responsive-pad-both();
+
+    &.no-pad {
+        @include responsive-pad-both(0, 0, 0);
+    }
+
+    &.pad-right {
+        @include responsive-pad-left(0, 0, 0);
+    }
+
+    &.pad-left {
+        @include responsive-pad-right(0, 0, 0);
+    }
+}
+@mixin grid-col-push($ratio:1) {
+    margin-left: $ratio * 100%;
+}
+@mixin grid-col-push-right($ratio:1) {
+    margin-right: $ratio * 100%;
+}
+@mixin device-col-push($device, $ratio:1) {
+    @media screen and (min-width: $device) {
+        margin-left: $ratio * 100%;
+    }
+}
+@mixin responsive-pad-both($mobile:$pad, $tablet:$pad-tab, $desktop:$pad-desk) {
+    padding-left: $mobile;
+    padding-right: $mobile;
+    @media screen and (min-width: $width-tablet) {
+        padding-left: $tablet;
+        padding-right: $tablet;
+    }
+    @media screen and (min-width: $width-desktop) {
+        padding-left: $desktop;
+        padding-right: $desktop;
+    }
+}
+@mixin responsive-pad-left($mobile:$pad, $tablet:$pad-tab, $desktop:$pad-desk) {
+    padding-left: $mobile;
+    @media screen and (min-width: $width-tablet) {
+        padding-left: $tablet;
+    }
+    @media screen and (min-width: $width-desktop) {
+        padding-left: $desktop;
+    }
+}
+@mixin responsive-pad-right($mobile:$pad, $tablet:$pad-tab, $desktop:$pad-desk) {
+    padding-right: $mobile;
+    @media screen and (min-width: $width-tablet) {
+        padding-right: $tablet;
+    }
+    @media screen and (min-width: $width-desktop) {
+        padding-right: $desktop;
+    }
+}
+@mixin row() {
+    @include flex;
+    flex-flow: row wrap;
+    margin: 0;
+    padding: 0!important !important;
+
+    &.demo {
+        & > * {
+            list-style: none;
+            text-align: center;
+            font-size: 3.2rem;
+            // background-color: fade-out($color-primary, 0.5);
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+
+    & > * {
+        width: 100%;
+    }
+}

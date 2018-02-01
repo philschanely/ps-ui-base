@@ -1,0 +1,48 @@
+$base-colors: (
+	dark: hsl(0, 0%, 12%),
+	medium: hsl(0, 0%, 46%),
+	light: hsl(0, 0%, 80%),
+	accent: hsl(0, 0%, 46%)
+);
+
+$theme-dark: (
+	menu-background: map-get($base-colors, dark),
+	menu-text: map-get($base-colors, light),
+	normal: map-get($base-colors, medium),
+	content-bg: hsl(220, 10%, 25%),
+	content-bg-2: hsl(220, 10%, 20%),
+	content-color-1: hsl(220, 10%, 90%),
+	content-color-2: hsl(220, 10%, 75%),
+	content-color-3: hsl(220, 10%, 60%),
+	accents: hsl(220, 53%, 90%)
+);
+
+$theme-light: (
+	menu-background: hsl(0, 0%, 100%),
+	menu-text: map-get($base-colors, medium),
+	normal: map-get($base-colors, medium)
+);
+
+$theme: $theme-dark;
+
+$colors: map-merge($base-colors, $theme);
+
+$menu-width: 14rem;
+
+
+// mixins
+@mixin clearfix {
+	&:after {
+		clear: both;
+	}
+
+	&:before,
+	&:after {
+		display: table;
+		content: ' ';
+	}
+}
+
+@mixin border-box {
+	box-sizing: border-box;
+}

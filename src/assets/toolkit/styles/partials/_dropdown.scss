@@ -1,0 +1,108 @@
+.dropdown {
+    @include list-unstyled;
+    @include bbox;
+    position: relative;
+    border-bottom: 1px solid $color-body-lt;
+}
+
+.dropdown--option-list {
+    width: auto;
+    margin-left: 0;
+    margin-right: 0;
+
+    .dropdown__label {
+        padding-right: $pad;
+        padding-left: $pad;
+    }
+
+    .dropdown__list {
+        width: 220px;
+    }
+}
+
+.dropdown.on {
+    border-color: $color-accent;
+
+    .dropdown__list {
+        right: 0;
+        height: auto;
+        opacity: 1;
+    }
+
+    .dropdown__label,
+    .dropdown__selected-item {
+        color: $color-accent;
+    }
+}
+
+.dropdown__label,
+.dropdown__selected-item {
+    cursor: pointer;
+    position: relative;
+    padding: 0 $col-inner + $pad/2 0 0;
+
+    &::after {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 4px;
+        width: $pad;
+        height: 15px;
+        text-align: right;
+        @include fas;
+        content: fa-content($fa-var-caret-down);
+    }
+}
+
+.dropdown__label--arrow-off,
+.dropdown__selected-item--arrow-off {
+    &::after {
+        display: none;
+    }
+}
+
+.dropdown__list {
+    @include list-unstyled;
+    width: 100%;
+    z-index: 1;
+    position: absolute;
+    top: 100%;
+    height: 0;
+    overflow: hidden;
+    background-color: $color-light;
+    opacity: 0;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    transition: 0.1s all linear;
+
+    li {
+        cursor: pointer;
+        @include responsive-pad-both($pad/2);
+        @include flex;
+        justify-content: space-between;
+        margin-left: 0;
+        margin-right: 0;
+        padding-top: $pad-top-body;
+        padding-bottom: $pad-bottom-body;
+
+        &.selected {
+            background-color: $color-accent;
+            color: $color-light;
+
+            &:hover {
+                background-color: $color-accent-dk;
+                color: $color-accent-lt;
+            }
+        }
+
+        &:hover {
+            background-color: $color-accent-dk;
+            color: $color-accent-lt;
+        }
+
+        .icon {
+            position: relative;
+            margin-top: -3px;
+            margin-bottom: -1 * $pad-bottom-body;
+        }
+    }
+}

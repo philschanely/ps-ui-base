@@ -1,0 +1,145 @@
+/**
+ * Github-like theme for Prism.js
+ * @author Luke Askew http://github.com/lukeaskew
+ */
+
+// color vars
+$code-colors: (
+	blue: #6CA7E6,
+	teal: #06BFAD,
+	black: #333,
+	purple: #a71d5d,
+	maroon: #a71d5d,
+	green: #63a35c,
+	light-gray: #f7f7f7,
+	dark-gray: #969896
+);
+
+$new-code-colors: (
+	orange: #D29B62,
+	green: #97C475,
+	teal: #51B6BA,
+	blue: #5DAEF2,
+	purple: #C774DF,
+	red: #E26B73,
+	grey: #A2B2C0,
+	mdgrey: hsl(220, 19%, 44%),
+	dkgrey: hsl(220, 10%, 20%)
+);
+
+
+// base
+.f-container {
+	
+	code,
+	code[class*='language-'],
+	pre[class*='language-'] {
+		color: map-get($new-code-colors, grey);
+		text-align: left;
+		white-space: pre;
+		word-spacing: normal;
+		tab-size: 4;
+		hyphens: none;
+		font-family: Consolas, 'Liberation Mono', Menlo, Courier, monospace;
+		line-height: 1.4;
+		direction: ltr;
+		cursor: text;
+		letter-spacing: normal;
+		background-color: map-get($new-code-colors, dkgrey);
+	}
+
+	// code blocks
+	pre[class*='language-'] {
+		overflow: auto;
+		margin: 1em 0;
+		padding: 1.2em;
+		border-radius: 3px;
+		font-size: 85%;
+		background-color: map-get($new-code-colors, dkgrey);
+	}
+
+	p code,
+	li code,
+	table code {
+		margin: 0;
+		border-radius: 3px;
+		padding: 0.2em 0;
+
+		&:before,
+		&:after {
+			letter-spacing: -0.2em;
+			content: '\00a0';
+		}
+	}
+
+	code,
+	:not(pre) > code[class*='language-'],
+	pre[class*='language-'] {
+		backgwround: map-get($new-code-colors, dkgrey);
+	}
+
+	// inline code
+	:not(pre) > code[class*='language-'] {
+		padding: 0.1em;
+		border-radius: 0.3em;
+	}
+
+}
+
+// token colors
+.token {
+
+	&.comment,
+	&.prolog,
+	&.doctype,
+	&.cdata {
+		color: map-get($new-code-colors, mdgrey);
+	}
+
+	&.punctuation {
+		color: map-get($new-code-colors, grey);
+	}
+
+	&.string,
+	&.atrule,
+	&.attr-value {
+		color: map-get($new-code-colors, green);
+	}
+
+	&.property,
+	&.tag {
+		color: map-get($new-code-colors, red);
+	}
+
+	&.boolean,
+	&.number {
+		color: map-get($new-code-colors, teal);
+	}
+
+	&.selector {
+		color: map-get($new-code-colors, blue);
+	}
+	&.attr-name,
+	&.attr-value .punctuation:first-child,
+	&.keyword,
+	&.regex,
+	&.important {
+		color: map-get($new-code-colors, orange);
+	}
+
+
+	&.operator,
+	&.entity,
+	&.url {
+		color: map-get($code-colors, blue);
+	}
+
+	&.entity {
+		cursor: help;
+	}
+
+}
+
+.namespace {
+	opacity: 0.7;
+}

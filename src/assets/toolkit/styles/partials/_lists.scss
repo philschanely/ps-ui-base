@@ -1,0 +1,151 @@
+li {}
+
+.value-list,
+dl {
+    @extend .row;
+
+    .item__label,
+    dt {
+        @include text-label;
+        @include responsive-pad-both;
+        @include device-col($width-tablet, 1/4);
+        @media screen and (min-width: $width-tablet) {
+            text-align: right;
+        }
+        @include device-col($width-desktop, 1/6);
+    }
+
+    .item__value,
+    dd {
+        @include text-body;
+        @include responsive-pad-both;
+        @include device-col($width-tablet, 3/4);
+        @include device-col($width-desktop, 2/3);
+        @media screen and (min-width: $width-desktop) {
+            @include grid-col-push-right(1/6);
+        }
+    }
+}
+
+.item {}
+
+.item__label {
+    flex: 1;
+}
+
+.item__meta {
+    display: flex;
+    align-items: center;
+    margin: 0 $pad;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    & > * {
+        margin-right: 15px;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+
+    .dropdown {
+        &:last-child {
+            .dropdown__label {
+                padding-right: 0;
+            }
+        }
+    }
+    @media screen and (min-width: $width-tablet) {
+        margin: 0 $pad-tab;
+    }
+}
+
+.list-group {
+    margin-top: $baseline;
+    margin-bottom: $baseline * 2;
+
+    ul {
+        @include list-unstyled;
+        margin-bottom: $baseline * 3;
+    }
+
+    .item,
+    li {
+        border-bottom: 1px solid $color-body-lt;
+        margin-bottom: -1px;
+        @include item-box;
+    }
+
+    & > p {
+        @include responsive-pad-both;
+    }
+}
+
+.list-group__link-list {
+    .item,
+    li {
+        @include responsive-pad-both(0, 0, 0);
+        background: none;
+
+        & > a {
+            @include item-box;
+            width: 100%;
+        }
+    }
+}
+
+.list-group__heading {
+    @include flex;
+    justify-content: space-between;
+    @include text-group-heading;
+
+    .btn,
+    button {
+        &:last-child {
+            position: relative;
+            left: 15px;
+            margin-left: -15px;
+        }
+
+        &:hover {
+            background-color: transparent;
+        }
+    }
+}
+
+.list--inline {
+    @include list-inline;
+
+    &.list--tight {
+        li {
+            margin-right: 0;
+        }
+    }
+}
+
+.list--unstyled {
+    @include list-unstyled;
+}
+
+.list--tight {
+    padding-top: $pad-top-body;
+    padding-bottom: $pad-bottom-body;
+
+    li {
+        padding: 0;
+        margin-bottom: 0;
+    }
+
+    .text-label {
+        padding-top: 4px;
+        padding-bottom: 0;
+        line-height: 1.6rem;
+    }
+
+    .text-value {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+}

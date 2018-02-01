@@ -1,0 +1,17 @@
+---
+notes: |
+  Radio controls are structured similar to checkboxes as well as allowing for custom ui styling.
+---
+<div class="input-group">
+  <span class="field__label">Ready to go?</span>
+  <div class="field">
+    <ul class="field-set field-set--inline">
+      {{#each sampleFields.radios}}
+      <li>
+        <input type="radio" name="{{group}}" id="{{id}}" value="{{value}}" />
+        <label>{{label}}</label>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

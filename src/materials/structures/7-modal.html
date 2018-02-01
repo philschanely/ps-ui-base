@@ -1,0 +1,36 @@
+---
+  notes: |
+  Modal content can be created using the following structure. To active a modal add a class of `.modal--on` to the parent `.modal` element. (You can do that now with Inspector to see the modal if you like!)
+---
+<div class="modal">
+  <div class="modal__content">
+    <h2 class="modal__title">Amazing Modal Contente!</h2>
+    <p class="lead">This modal is worth calling your attention.</p>
+    <form>
+      <ul>
+        <li>
+          <label for="name">Your Name:</label>
+          <input id="name" name="name" [(ngModel)]="name" type="text">
+        </li>
+        <li>
+          <label for="email">Email:</label>
+          <input id="email" name="email" [(ngModel)]="email" type="text">
+        </li>
+        <li>
+          <label for="password">Password:</label>
+          <input id="password" name="password" [(ngModel)]="password" type="password">
+        </li>
+        <li>
+          <label for="confirmPassword">Confirm Password:</label>
+          <input id="confirmPassword" name="confirmPassword" [(ngModel)]="confirmPassword"
+                 type="password">
+        </li>
+      </ul>
+      <div class="form__footer">
+        <button type="button" class="btn--success">Subscribe</button>
+        <button type="button">Cancel</button>
+      </div>
+    </form>
+    <i class="icon icon--close"></i>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+{
+  "radios": [
+    {
+      "id": "radio1",
+      "name": "radioSamples",
+      "value": "1",
+      "label": "Yes"
+    },
+    {
+      "id": "radio2",
+      "name": "radioSamples",
+      "value": "0",
+      "label": "No"
+    }
+  ],
+  "checkboxes": [
+    {
+      "id": "check1",
+      "name": "checkSamples",
+      "value": "1",
+      "label": "Red"
+    },
+    {
+      "id": "check2",
+      "name": "checkSamples",
+      "value": "2",
+      "label": "Fandango"
+    },
+    {
+      "id": "check3",
+      "name": "checkSamples",
+      "value": "3",
+      "label": "Purple"
+    },
+    {
+      "id": "check4",
+      "name": "checkSamples",
+      "value": "4",
+      "label": "Indigo"
+    }
+  ]
+}

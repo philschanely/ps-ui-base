@@ -1,0 +1,197 @@
+.field {
+    @include field;
+}
+
+.field__feedback {
+    @include field__feedback;
+}
+
+.field__info {
+    @include field__info;
+}
+
+.field-set {
+    @include field-set;
+}
+
+form {
+    margin-top: $baseline * 2;
+}
+
+.form__group,
+form {
+    width: 100%;
+
+    & > ul {
+        @include list-unstyled;
+
+        & > li {
+            @include input-group;
+        }
+    }
+
+    .dropdown {
+        @include input;
+    }
+}
+
+.form__group--icon-labels {
+    & > li,
+    & > ul > li,
+    .input-group {
+        @include input-group--icon-label;
+    }
+}
+
+.form__description {
+    @include responsive-pad-both;
+}
+
+// TODO: Update the inline form to allow lists
+.form--inline {
+    width: 100%;
+    margin-top: $baseline;
+    margin-bottom: $baseline;
+    @include flex;
+
+    .form__label,
+    label {
+        width: auto;
+        margin-top: 0;
+    }
+
+    & > ul {
+        @include flex;
+
+        & > li {
+            margin-right: $gutter;
+        }
+    }
+
+    .input-group {
+        flex: 1;
+        margin-right: $gutter;
+        margin-top: 0;
+    }
+
+    .btn,
+    button {
+        margin-top: $baseline * 3;
+        margin-bottom: 0;
+    }
+    @media screen and (min-width: $width-tablet) {
+        .form__label,
+        label {
+            margin-bottom: 0;
+        }
+
+        .input-group {
+            margin-bottom: 0;
+        }
+
+        .btn,
+        button {
+            margin-top: 0;
+        }
+    }
+}
+
+.form__feedback {
+    @include form__feedback;
+}
+
+.form__footer {
+    margin-top: $baseline * 3;
+    margin-bottom: $baseline * 3;
+    @extend .btn-bar;
+    margin-left: $pad;
+    margin-right: $pad;
+
+    & > p {
+        width: 100%;
+        margin-left: 0;
+    }
+    @media screen and (min-width: $width-tablet) {
+        justify-content: flex-start;
+        @include grid-col-push(1/4);
+        @include grid-col(3/4);
+    }
+    @media screen and (min-width: $width-desktop) {
+        @include grid-col-push(1/6);
+        @include grid-col(3/4);
+    }
+}
+
+.form__footer--full {
+    @media screen and (min-width: $width-tablet) {
+        width: 100%;
+        margin-left: 0;
+    }
+    @media screen and (min-width: $width-desktop) {
+        width: 100%;
+        margin-left: 0;
+    }
+}
+
+.form__heading {
+    @include text-group-heading;
+}
+
+input {
+    @include input;
+}
+
+input[type="radio"] {
+    @include input-toggle;
+
+    & + label::before {
+        @include fal;
+        content: fa-content($fa-var-circle);
+    }
+
+    & + label::after {
+        @include fas;
+        content: fa-content($fa-var-dot-circle);
+        color: $color-accent;
+    }
+}
+
+input[type="checkbox"] {
+    @include input-toggle;
+
+    & + label::before {
+        @include fal;
+        content: fa-content($fa-var-square);
+    }
+
+    & + label::after {
+        @include fas;
+        content: fa-content($fa-var-check-square);
+        color: $color-accent;
+    }
+}
+
+input[type="file"] {
+    @include input-file;
+}
+
+.input-group {
+    @include input-group;
+}
+
+.field__label,
+label {
+    @include label;
+}
+
+select {
+    display: none;
+
+    &.no-cf {
+        display: inline;
+    }
+}
+
+textarea {
+    @include textarea;
+}

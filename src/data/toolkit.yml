@@ -1,0 +1,34 @@
+colors:
+  body:
+    Body: "#46474D"
+    Body Medium: "#7D8089"
+    Body Light: "#BEC0C9"
+    Body Extra Light: "#F1F2F5"
+  primary:
+    Primary Dark: "#343B7A"
+    Primary: "#5766FA"
+    Primary Light: "#A9B0F7"
+  info:
+    Info Dark: "#5C2C76"
+    Info: "#AD60D7"
+    Info Light: "#D1ACE5"
+  secondary:
+    Secondary Dark: "#A12B5C"
+    Secondary: "#ED3F88"
+    Secondary Light: "#F498BF"
+  danger:
+    Danger Dark: "#7F251D"
+    Danger: "#EE5041"
+    Danger Light: "#F1ACA5"
+  alert:
+    Alert Dark: "#917423"
+    Alert: "#E6B837"
+    Alert Light: "#EFDCA9"
+  success:
+    Success Dark: "#208437"
+    Success: "#32D457"
+    Success Light: "#A9F1B9"
+  accent:
+    Accent Dark: "#0D6D8D"
+    Accent: "#0FB6EF"
+    Accent Light: "#93DBF3"

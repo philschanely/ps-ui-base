@@ -1,0 +1,32 @@
+---
+  notes: |
+  Needs arise on occasion to add soft breaks with the `br` tag.
+  Since such a break is enforced across all devices by default this can help some sizes but hurt others.
+  We've set up a few helper classes that allow for more responsive use of the br tag:
+
+  | Class                     | < 365 | < 760 | < 1020 | 1020+ |
+  |:--------------------------|:------|:------|:-------|:------|
+  | `.br--sm-smartphone-only` | YES*  | NO    | NO     | NO    |
+  | `.br--smartphone-only`    | NO    | YES   | NO     | NO    |
+  | `.br--tablet-only`        | NO    | NO    | YES    | NO    |
+  | `.br--desktop-only`       | NO    | NO    | NO     | YES   |
+  | `.br--not-sm-smartphone`  | NO**  | yes   | yes    | yes   |
+  | `.br--not-smartphone`     | yes   | NO    | yes    | yes   |
+  | `.br--not-tablet`         | yes   | yes   | NO     | yes   |
+  | `.br--not-desktop`        | yes   | yes   | yes    | NO    |
+
+  \* YES vs. NO here means it is enabled for YES *and restricted* at NO
+
+  \*\* yes vs. NO here means it is restricted for NO but will be passively enabled at yes unless otherwise restriced by layering several `--not-` modifiers together.
+
+---
+<p>Aenean eu leo quam. [sm smartphone only] <br class="br--sm-smartphone-only" />
+  Pellentesque ornare sem lacinia quam venenatis vestibulum. [smartphone only] <br class="br--smartphone-only" />
+  Nullam id dolor id nibh ultricies vehicula ut id elit. [tablet only] <br class="br--tablet-only" />
+  Nullam quis risus eget urna mollis ornare vel eu leo. [desktop only] <br class="br--desktop-only" />
+  Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+  <p>Aenean eu leo quam. [not sm smartphone] <br class="br--not-sm-smartphone" />
+    Pellentesque ornare sem lacinia quam venenatis vestibulum. [not smartphone] <br class="br--not-smartphone" />
+    Nullam id dolor id nibh ultricies vehicula ut id elit. [not tablet] <br class="br--not-tablet" />
+    Nullam quis risus eget urna mollis ornare vel eu leo. [not desktop] <br class="br--not-desktop" />
+    Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>

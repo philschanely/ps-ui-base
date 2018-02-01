@@ -1,0 +1,38 @@
+@mixin list-compound() {
+    @include list-inline;
+    flex-flow: row wrap;
+
+    li {
+        margin-right: 0;
+        @include responsive-pad-both;
+
+        img {
+            max-width: 100%;
+        }
+    }
+}
+@mixin list-inline() {
+    @include list-unstyled;
+    @include flex;
+
+    li {
+        margin-right: $pad;
+
+        &:last-of-type {
+            margin-right: 0;
+        }
+    }
+}
+@mixin list-unstyled() {
+    margin: 0;
+
+    & > li {
+        list-style: none;
+    }
+}
+@mixin item-box() {
+    @include bbox;
+    @include flex;
+    justify-content: space-between;
+    @include responsive-pad-both;
+}

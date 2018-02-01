@@ -1,0 +1,397 @@
+@mixin field() {
+    @include responsive-pad-both();
+    @media screen and (min-width: $width-tablet) {
+        margin-left: 0;
+        margin-right: 0;
+        @include grid-col(3/4);
+
+        &.field--full {
+            width: 100%;
+
+            input,
+            textarea {
+                width: 100%;
+            }
+        }
+    }
+}
+@mixin field__feedback() {
+    @include bbox;
+    @include text-info;
+    @include responsive-pad-both($pad / 2, 10px, 10px);
+
+    &.field__feedback--success {
+        color: $color-success;
+    }
+
+    &.field__feedback--danger {
+        color: $color-danger;
+    }
+
+    &.field__feedback--alert {
+        color: $color-alert;
+    }
+
+    &.field__feedback--info {
+        color: $color-info;
+    }
+}
+@mixin field__info() {
+    @include bbox;
+    @include text-info;
+    @include responsive-pad-both($pad / 2, 10px, 10px);
+}
+@mixin field-set() {
+    @include list-unstyled;
+    display: block;
+
+    li {
+        display: block;
+        width: 100%;
+        position: relative;
+
+        label {
+            @include text-body;
+            padding-top: $pad-top-body;
+            padding-bottom: $pad-bottom-body;
+            text-transform: none;
+            margin-bottom: 0;
+            margin-top: 0;
+        }
+    }
+
+    &.field-set--inline {
+        @include field-set--inline;
+    }
+
+    &.field-set--2-up {
+        @include field-set--cols(2);
+    }
+
+    &.field-set--3-up {
+        @include field-set--cols(3);
+    }
+
+    &.field-set--4-up {
+        @include field-set--cols(4);
+    }
+}
+@mixin field-set--cols($num) {
+    @include field-set--inline;
+
+    & > li {
+        width: 1/$num * 100%;
+    }
+}
+@mixin field-set--inline() {
+    @include flex;
+    flex-flow: row wrap;
+
+    & > li {
+        width: auto;
+        @include bbox;
+        @include responsive-pad-right;
+    }
+}
+@mixin form__feedback() {
+    font-weight: 600;
+    @media screen and (min-width: $width-tablet) {
+        @include grid-col-push(1/4);
+    }
+
+    &.form__feedback--danger {
+        color: $color-danger;
+    }
+
+    &.form__feedback--alert {
+        color: $color-alert;
+    }
+
+    &.form__feedback--success {
+        color: $color-success;
+    }
+}
+@mixin input() {
+    @include bbox;
+    @include text-body;
+    width: 100%;
+    padding-top: $pad-top-body - 1px;
+    padding-bottom: $pad-top-body - 1px;
+    border: none;
+    background-color: transparent;
+    border: 1px solid $color-body-lt;
+    border-radius: 2px;
+    @include responsive-pad-both($pad, 10px, 10px);
+
+    &:focus {
+        outline: none;
+        border-color: $color-accent;
+    }
+
+    // TODO: Make a smarter function for this math!
+    @media screen and (min-width: $width-tablet) {
+        $inner-field-width: 536;
+        width: 100% * 344/$inner-field-width;
+
+        &.input--col-1 {
+            width: 100% * 24/$inner-field-width;
+        }
+
+        &.input--col-2,
+        &.input--sm {
+            width: 100% * 88/$inner-field-width;
+        }
+
+        &.input--col-3 {
+            width: 100% * 152/$inner-field-width;
+        }
+
+        &.input--col-4,
+        &.input--md {
+            width: 100% * 216/$inner-field-width;
+        }
+
+        &.input--col-5 {
+            width: 100% * 280/$inner-field-width;
+        }
+
+        &.input--col-6 {
+            width: 100% * 344/$inner-field-width;
+        }
+
+        &.input--col-7,
+        &.input--lg {
+            width: 100% * 408/$inner-field-width;
+        }
+
+        &.input--col-8,
+        &.input--xl {
+            width: 100% * 472/$inner-field-width;
+        }
+
+        &.input--col-9,
+        &.input--full {
+            width: 100%;
+        }
+    }
+    @media screen and (min-width: $width-desktop) {
+        $inner-field-width: 940;
+        width: 100% * 280/$inner-field-width;
+
+        &.input--col-1,
+        &.input--sm {
+            width: 100% * 60/$inner-field-width;
+        }
+
+        &.input--col-2,
+        &.input--md {
+            width: 100% * 170/$inner-field-width;
+        }
+
+        &.input--col-3 {
+            width: 100% * 280/$inner-field-width;
+        }
+
+        &.input--col-4,
+        &.input--lg {
+            width: 100% * 390/$inner-field-width;
+        }
+
+        &.input--col-5,
+        &.input--xl {
+            width: 100% * 500/$inner-field-width;
+        }
+
+        &.input--col-6 {
+            width: 100% * 610/$inner-field-width;
+        }
+
+        &.input--col-7 {
+            width: 100% * 720/$inner-field-width;
+        }
+
+        &.input--col-8 {
+            width: 100% * 830/$inner-field-width;
+        }
+
+        &.input--col-9,
+        &.input--full {
+            width: 100%;
+        }
+    }
+}
+@mixin input-group() {
+    margin-top: $baseline;
+    padding-top: 0;
+    padding-bottom: 0;
+    @media screen and (min-width: $width-tablet) {
+        @include flex;
+        flex-flow: row wrap;
+        margin-bottom: $baseline * 2;
+    }
+}
+@mixin input-group--icon-label() {
+    @include flex;
+    margin-bottom: $baseline * 2;
+    @include responsive-pad-both;
+
+    .form__label,
+    label {
+        width: $col;
+        margin-top: 0;
+        text-align: center;
+        border-radius: 2px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        @include responsive-pad-both(0, 0, 0);
+
+        &.label--success {
+            color: $color-light;
+            background-color: $color-success;
+        }
+
+        &.label--accent {
+            color: $color-light;
+            background-color: $color-accent;
+        }
+
+        &.label--alert {
+            color: $color-alert-dk;
+            background-color: $color-alert;
+        }
+
+        &.label--danger {
+            color: $color-light;
+            background-color: $color-danger;
+        }
+
+        .icon {
+            display: block;
+            margin-top: 2px;
+            width: 100%;
+        }
+        @media screen and (min-width: $width-tablet) {
+            width: $col-tab;
+        }
+        @media screen and (min-width: $width-desktop) {
+            width: $col-inner-desk;
+        }
+    }
+
+    .field {
+        width: auto;
+        flex: 1;
+        @include responsive-pad-both(0,0,0);
+
+        input,
+        textarea {
+            width: 100%;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            border-left: none;
+        }
+    }
+    @media screen and (min-width: $width-tablet) {
+        flex-flow: row;
+    }
+}
+@mixin input-file() {
+    border-bottom: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: $size-inline;
+    cursor: pointer;
+    opacity: 0;
+}
+@mixin input-toggle() {
+    position: absolute;
+    opacity: 0;
+    top: 7px;
+    width: 100%;
+
+    & + label {
+        position: relative;
+        cursor: pointer;
+        text-align: left;
+        display: block;
+        width: auto;
+        padding: 0;
+        @include responsive-pad-left(36px, 43px, 43px);
+
+        &::before {
+            @include input-toggle-pseudo-el;
+        }
+
+        &::after {
+            @include input-toggle-pseudo-el;
+            opacity: 0;
+        }
+    }
+
+    &:checked + label::after {
+        opacity: 1;
+    }
+}
+@mixin input-toggle-pseudo-el() {
+    @include bbox;
+    display: block;
+    width: 20px;
+    height: 20px;
+    transition: 0.1s all linear;
+    position: absolute;
+    top: 2px;
+    left: $pad / 2;
+    text-align: left;
+    font-size: $size-icon;
+    @media screen and (min-width: $width-tablet) {
+        left: 10px;
+    }
+    @media screen and (min-width: $width-desktop) {
+        left: 10px;
+    }
+}
+@mixin label() {
+    @include bbox;
+    @include text-label;
+    display: block;
+    width: 100%;
+    margin-top: $baseline;
+    @include responsive-pad-left;
+    @include responsive-pad-right;
+
+    br {
+        display: none;
+    }
+    @media screen and (min-width: $width-tablet) {
+        margin-top: 0;
+        @include grid-col(1/4);
+        text-align: right;
+
+        br {
+            display: inline;
+        }
+
+        &.field__label--full {
+            width: 100%;
+            text-align: left;
+        }
+    }
+    @media screen and (min-width: $width-desktop) {
+        @include grid-col(1/6);
+
+        &.field__label--full {
+            width: 100%;
+            text-align: left;
+        }
+    }
+}
+@mixin textarea() {
+    @include input;
+    min-height: $baseline * 8;
+}

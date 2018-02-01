@@ -1,0 +1,77 @@
+---
+notes: |
+  Here is an example of a fully assembled form. There are many optional elements here that are explained in more detail under the Components heading.
+
+  Take note here for how `.form__heading` and `.form__footer` add a nice wrapper to the elements inside the form.
+---
+<form action="">
+	<h2 class="form__heading">Account settings</h2>
+	<ul>
+		<li>
+			<label for="name">Your name:</label>
+			<div class="field">
+				<input type="text" id="name" name="name" value="Phil Schanely" />
+			</div>
+		</li>
+		<li>
+			<label for="name">Email:</label>
+			<div class="field">
+				<input class="input--xl" type="email" id="email" name="email" value="philschanely@gmail.com" />
+			</div>
+		</li>
+		<li>
+			<label for="choose-card">Choose a card:</label>
+			<div class="field">
+				<select name="choose-card" id="choose-card">
+					<option value="1">Visa ****-1234</option>
+					<option value="2">Visa ****-5678</option>
+					<option value="3" selected="selected">Visa ****-9012</option>
+				</select>
+				<p class="field__feedback field__feedback--danger">Testing field feedback</p>
+			</div>
+		</li>
+		<li>
+			<span class="field__label">Turn on notifications</span>
+			<div class="field">
+				<p class="field__info">Testing field info</p>
+			  <ul class="field-set field-set--inline">
+			    <li>
+			      <input type="radio" name="notifications" id="notifications-yes" value="1" />
+			      <label>Yes</label>
+			    </li>
+			    <li>
+			      <input type="radio" name="notifications" id="notifications-no" value="0" />
+			      <label>No</label>
+			    </li>
+			  </ul>
+			</div>
+		</li>
+		<li>
+			<span class="field__label">Ready to go?</span>
+			<div class="field">
+				<p class="field__info">Testing field info</p>
+			  <ul class="field-set">
+			    {{#each sampleFields.checkboxes}}
+			    <li>
+			      <input type="checkbox" name="{{group}}" id="{{id}}" value="{{value}}" />
+			      <label>{{label}}</label>
+			    </li>
+			    {{/each}}
+			  </ul>
+			</div>
+		</li>
+		<li>
+		  <label for="description">Provide a description:</label>
+			<div class="field">
+				<p class="field__info">Testing field info</p>
+			  <textarea name="description" id="description">Description goes here...</textarea>
+			</div>
+		</li>
+	</ul>
+	<div class="form__footer">
+		<button class="btn--success">Save</button>
+		<button class="">Cancel</button>
+		<p class="form__feedback form__feedback--success">Feedback for the form as a whole.</p>
+		<p>Don't worry&mdash;we won't ever send you spam or share your info with any other services</p>
+	</div>
+</form>

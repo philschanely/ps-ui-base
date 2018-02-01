@@ -1,0 +1,53 @@
+---
+notes: |
+    While a simple form might typically have a single list of fields, if several lists are desired you can group them inside `.form__group` elements. Optionally, add `.form__heading` above each group as well.
+
+    Related to this, add `.form__description` elements to provide summaries where needed inside a form.
+
+    Finally, add form-wide feedback by adding `.form__feedback` anywhere desired, but most logically in the `.form__footer`.
+---
+<form>
+    <div class="form__group">
+        <h3 class="form__heading">Basics</h3>
+        <ul>
+            <li>
+                <label>Name</label>
+                <div class="field">
+                    <input type="text" />
+                </div>
+            </li>
+            <li>
+                <label>Email</label>
+                <div class="field">
+                    <input type="email" />
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="form__group">
+        <h3 class="form__heading">Additional Info</h3>
+        <div class="form__description">
+            <p>All the information you can provide will help us serve you better. Please enter everything you can possibly think of below.</p>
+        </div>
+        <ul>
+            <li>
+                <label>Age</label>
+                <div class="field">
+                    <input type="text" />
+                </div>
+            </li>
+            <li>
+                <label>Hair color</label>
+                <div class="field">
+                    <input type="text" />
+                </div>
+            </li>
+            <li>
+                <label>Eye color</label>
+                <div class="field">
+                    <input type="text" />
+                </div>
+            </li>
+        </ul>
+    </div>
+</form>

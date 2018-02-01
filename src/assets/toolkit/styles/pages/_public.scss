@@ -1,0 +1,88 @@
+.page {}
+
+.page--public {}
+
+.page--login {
+  .page__body,
+  .page__header {
+    @media screen and (min-width: $width-tablet) {
+      @include grid-col-push(1/4);
+      width: 50%;
+    }
+    @media screen and (min-width: $width-desktop) {
+      @include grid-col-push(1/3);
+      width: 100% * 1/3;
+    }
+  }
+
+  .form--login {
+    width: 100%;
+  }
+
+  .form__footer {
+    button, .btn { width: 100%; }
+
+    @media screen and (min-width: $width-tablet) {
+      margin-left: 0;
+      width: 100%;
+    }
+  }
+}
+
+.page__header {
+  position: relative;
+  margin-top: $baseline * 1;
+  @media screen and (min-width: $width-tablet) {
+    @include row;
+    justify-content: space-between;
+    flex-flow: row;
+    margin-top: $baseline * 4;
+  }
+
+}
+
+.page__back-link {
+  width: auto;
+  display: block;
+  padding-top: $pad-top-body;
+  padding-bottom: $pad-bottom-body;
+  @include responsive-pad-both();
+  @media screen and (min-width: $width-tablet) {
+    position: absolute;
+    top: -2 * $baseline ;
+  }
+}
+
+.page__body {
+  @include responsive-pad-both();
+  & > form {
+    width: 100vw;
+    margin-left: -1 * $pad;
+    margin-right: -1 * $pad;
+    @media screen and (min-width: $width-tablet) {
+      margin-left: -1 * $pad-tab;
+      margin-right: -1 * $pad-tab;
+    }
+    @media screen and (min-width: $width-desktop) {
+      margin-left: -1 * $pad-desk;
+      margin-right: -1 * $pad-desk;
+    }
+  }
+}
+
+.page__title,
+.page__header > h2 {
+  width: auto;
+  @include responsive-pad-both();
+  margin-bottom: 0;
+}
+
+.page__options {
+  width: auto;
+  @include btn-bar;
+  @include responsive-pad-both();
+
+  @media screen and (min-width: $width-tablet) {
+    margin-top: $baseline;
+  }
+}

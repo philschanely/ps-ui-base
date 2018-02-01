@@ -1,0 +1,59 @@
+.chip {
+    @include bbox;
+    padding: 0 10px;
+    display: inline-block;
+    border-radius: 15px;
+    min-width: 30px;
+    text-align: center;
+    font-style: normal;
+    color: $color-light;
+    background-color: $color-body;
+    font-size: 1.3rem;
+
+    .icon {
+        @extend .icon.icon--xs;
+        margin-left: 5px;
+    }
+}
+
+.chip--circle {
+    width: 30px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.chip--success {
+    background-color: $color-success;
+}
+
+.chip--danger {
+    background-color: $color-danger;
+}
+
+.chip--nav {
+    background-color: $color-nav;
+}
+
+.chip--accent {
+    background-color: $color-accent;
+}
+
+.chip--primary {
+    background-color: $color-primary;
+}
+
+.chip--secondary {
+    background-color: $color-secondary;
+}
+
+.chip--neutral {
+    background-color: $color-neutral;
+}
+
+.chip--dark {
+    background-color: $color-dark;
+}
+
+.chip--light {
+    background-color: $color-light;
+}

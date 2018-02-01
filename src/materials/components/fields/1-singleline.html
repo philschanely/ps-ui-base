@@ -1,0 +1,20 @@
+---
+label: Your name
+id: yourName
+value: My Name
+notes: |
+  **NOTE for all form fields:** The examples shown here include a `div.input-group` as a clean container for each `label` and `.field`.
+  While this is an acceptable solution for standalone fields like those depicted, in many cases forms contain several fields that might be best grouped using list markup.
+  In these cases simply replace the `div.input-group` with `li` and group related sets of `li` with `ul` or `ol` inside of the overall `form` tag.
+  See the `form` structure example.
+
+  All fields are wrapped in `.field` so as to contain related `.field__info` and `.field__feedback`. Feedback can also use any of the standard modifiers such as `--warning`, `--danger`, and `--success`.
+---
+<div class="input-group">
+  <label for="{{id}}">{{label}}</label>
+  <div class="field">
+    <p class="field__info">Optional field instructions will appear here.</p>
+    <input type="text" id="{{id}}" name="{{id}}" value="{{value}}" />
+    <p class="field__feedback field__feedback--success">Field feedback will appear here.</p>
+  </div>
+</div>

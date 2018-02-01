@@ -1,0 +1,42 @@
+---
+notes: |
+  List groups provide a structure for lists that have a tight heading and item setup. Use the following items as needed:
+  * `.list-group` goes on a container around the list and heading sets.
+  * `.list-group__header` should be placed on the header regardless of the level of heading employed.
+  * A `ul` or `ol` should contain items in the list. This can have the `.list-group__link-list` applied of all if its items contain links that should span their width (see below).
+
+  The list items inside each list can have an optional class of `.item` (required if they're not `li` elements) and support the following structure as needed:
+  * `.item__label` can be used to contain the label for the item, especially if there will be other content inside the item.
+  * `.item__meta` can be used to wrap a set of data attributes for the item such as one or more chips.
+
+---
+<div class="list-group">
+  <h3 class="list-group__heading">Your Subscriptions</h3>
+  <ul class="list-group__link-list">
+    <li>
+      <a href="#">
+        <span class="item__label">Self Motivation How to Keep</span>
+        <div class="item__meta">
+          <i class="chip chip--success" title="New content">2</i>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="item__label">Survival</span>
+        <div class="item__meta">
+          <i class="chip chip--danger" title="Issues">5</i>
+          <i class="chip chip--success" title="New content">2</i>
+        </div>
+      </a>
+    </li>
+    <li>
+      <a href="#">
+        <span class="item__label">Learn to Face Difficulty</span>
+        <div class="item__meta">
+          <i class="chip chip--success" title="New content">2</i>
+        </div>
+      </a>
+    </li>
+  </ul>
+</div>

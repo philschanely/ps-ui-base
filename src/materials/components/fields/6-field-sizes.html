@@ -1,0 +1,60 @@
+---
+notes: |
+  You can set the size of input fields as follows:
+
+  * `.input--sm` -- Much smaller than a regular field and good for numbers up to just a few digits
+  * `.input--md` -- A little smaller than a regular field
+  * (normal inputs are this size)
+  * `.input--lg` -- Occupies *most* all of the space left after a label
+  * `.input--xl` -- Occupies *almost all* of the space left after a label
+  * `.input--full` -- Occupies *all* of the space left after a label
+
+  You also have the option to make a field fill the whole row and omit the label. In such a case add `.field--full` on the `.field` container and the contained controls will fill the row by default. You can still stack on field sizes on the controls as desired.
+
+  Use this when you don't have a label and want the input to fill the *entire* row.
+---
+<form>
+  <ul>
+    <li>
+      <label for="name">Your name</label>
+      <div class="field">
+        <input class="input--sm" type="text" name="name" value="Phil Schanely" />
+      </div>
+    </li>
+    <li>
+      <label for="name">Your name</label>
+      <div class="field">
+        <input class="input--md" type="text" name="name" value="Phil Schanely" />
+      </div>
+    </li>
+    <li>
+      <label for="name">Your name</label>
+      <div class="field">
+        <input type="text" name="name" value="Phil Schanely" />
+      </div>
+    </li>
+    <li>
+      <label for="name">Your name</label>
+      <div class="field">
+        <input class="input--lg" type="text" name="name" value="Phil Schanely" />
+      </div>
+    </li>
+    <li>
+      <label for="name">Your name</label>
+      <div class="field">
+        <input class="input--xl" type="text" name="name" value="Phil Schanely" />
+      </div>
+    </li>
+    <li>
+      <label for="name">Your name</label>
+      <div class="field">
+        <input class="input--full" type="text" name="name" value="Phil Schanely" />
+      </div>
+    </li>
+    <li>
+      <div class="field field--full">
+        <input type="text" name="name" placeholder="Enter your name" />
+      </div>
+    </li>
+  </ul>
+</form>

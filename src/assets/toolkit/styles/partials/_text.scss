@@ -1,0 +1,236 @@
+a {
+	color: $color-accent;
+	text-decoration: none;
+	cursor: pointer;
+
+	&:hover {
+		color: $color-accent-dk;
+	}
+}
+
+b {
+	font-weight: 700;
+}
+
+br {
+	@include responsive-br;
+}
+
+code,
+code[class*="language-"] {
+	font-family: $font-mono;
+	font-size: 1.2rem;
+}
+
+blockquote {
+	padding: $pad-top-body 50px $pad-bottom-body;
+	margin: 0;
+	position: relative;
+
+	p {
+		&:first-of-type {
+			margin-top: 0;
+			padding-top: 0;
+		}
+
+		&:last-of-type {
+			margin-bottom: 0;
+			padding-bottom: 0;
+
+			&::after {
+				display: inline-block;
+				padding-left: 8px;
+				content: "\201D";
+				font-size: 5.6rem;
+				line-height: 0;
+				vertical-align: -28px;
+				color: $color-body;
+			}
+		}
+	}
+
+	&::before {
+		content: "\201C";
+		position: absolute;
+		font-size: 5.6rem;
+		top: 19px;
+		left: 22px;
+		color: $color-body;
+	}
+
+	&.blockquote--no-citation::after {
+		bottom: -8px;
+	}
+
+	.citation,
+	cite {
+		display: block;
+		text-align: right;
+		font-size: 1.6rem;
+		line-height: $baseline * 2;
+		font-weight: 300;
+		font-style: italic;
+		color: $color-body-md;
+		margin-top: 0;
+		padding-top: 0;
+		padding-bottom: 0;
+	}
+}
+
+.dark-text {
+	color: $color-light;
+}
+
+em {
+	font-style: italic;
+}
+
+.h1,
+h1 {
+	@include text-h2;
+	@media screen and (min-width: $width-tablet) {
+		@include text-h1;
+	}
+}
+
+.h2,
+h2 {
+	@include text-h3;
+	color: $color-primary;
+	// margin-bottom: $baseline;
+	@media screen and (min-width: $width-tablet) {
+		@include text-h2;
+	}
+}
+
+.h3,
+h3 {
+	// margin-top: $baseline * 2;
+	@include text-h4;
+	@media screen and (min-width: $width-tablet) {
+		@include text-h3;
+	}
+}
+
+.h4,
+h4 {
+	@media screen and (min-width: $width-tablet) {
+		@include text-h4;
+	}
+}
+
+.h5,
+h5 {
+	// margin-top: $baseline;
+	@include text-h5;
+}
+
+.h6,
+h6 {
+	// margin-top: $baseline;
+	@include text-h6;
+
+	h5 + & {
+		margin-top: 0;
+	}
+}
+
+i {
+	font-style: italic;
+}
+
+.label,
+label {
+	@include text-label;
+}
+
+li {
+	@include text-body;
+
+	.text-label {
+		@include text-label-inline;
+	}
+}
+
+ol {
+	margin: 0 0 $baseline $gutter;
+
+	li {
+		list-style: decimal;
+	}
+}
+
+p {
+	@include text-body;
+
+	&.lead {
+		margin-top: $baseline;
+		@include text-lead;
+	}
+
+	.text-label {
+		@include text-label-inline;
+	}
+
+	main > & {
+		@include responsive-pad-both;
+	}
+}
+
+pre,
+pre[class*="language-"],
+ {
+	margin-top: $baseline;
+	margin-bottom: 13px;
+	padding-top: 9px;
+	padding-bottom: 6px;
+	@include responsive-pad-both;
+	border-radius: 4px;
+	background-color: fade-out($color-body, 0);
+	font-family: $font-mono;
+	font-size: 1.2rem;
+	color: $color-secondary;
+}
+
+strong {
+	font-weight: 700;
+}
+
+.text-label {
+	@include text-label;
+}
+
+table {
+	width: 100%;
+}
+
+td {
+	padding-left: $half-pad;
+	padding-right: $half-pad;
+	@include text-body;
+	padding-bottom: $pad-bottom-body - 1px;
+}
+
+th {
+	padding-left: $half-pad;
+	padding-right: $half-pad;
+	@include text-th;
+	padding-bottom: $pad-bottom-th - 2px;
+	text-align: left;
+	border-bottom: 2px solid $color-body-lt;
+}
+
+tr {
+	& > td {
+		border-bottom: 1px solid $color-body-lt;
+	}
+	// &:nth-child(even) > td { background-color: $color-body-xlt }
+}
+
+ul {
+	margin: 0 0 $baseline $gutter;
+
+	li {
+		list-style: disc;
+	}
+}

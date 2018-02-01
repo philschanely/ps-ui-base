@@ -1,0 +1,39 @@
+---
+notes: |
+
+  Because checkbox controls usually come in lists, we've scaffolded the following structure to ensure consistency in markup and style.
+
+  * These individual fields are paired with their own `label` elements,
+    so the overall label for the whole set is generated with a `.field__label`.
+  * The set of fields are grouped inside a `.field-set` group and each contained
+
+  #### Custom Input Styles
+
+  We've also addded a custom form library that allows checkbox controls to have a custom UI.
+  By default, the `input` is hidden and an `::before` and `::after` psuedo-element are turned on and styled.
+  Use these as hooks to implement further customizations or background icon images.
+  A minimal jQuery-based library is attached that ensures the input selection is kept in sync with user interactions.
+
+  #### Inline Tiling
+
+  We've set up `.field-set` components to allow several tiling settings:
+  `.field-set--inline` for each item to tile up beside each other
+  `.field-set--2-up` for evenly-spaced two columns,
+  `.field-set--3-up` for evenly-spaced three columns, and
+  `.field-set--4-up` for evenly-spaced four columns.
+  See the radio component for an example of this in practice.
+
+---
+<div class="input-group">
+  <span class="field__label">Ready to go?</span>
+  <div class="field">
+    <ul class="field-set">
+      {{#each sampleFields.checkboxes}}
+      <li>
+        <input type="checkbox" name="{{group}}" id="{{id}}" value="{{value}}" />
+        <label>{{label}}</label>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+</div>

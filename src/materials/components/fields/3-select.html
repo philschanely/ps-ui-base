@@ -1,0 +1,18 @@
+---
+label: Select options
+id: yourName
+notes: |
+  Selection lists are styled as dropdown lists by default. You can turn this off using `.no-cf`. A handy CustomField js library is included that also transforms these into stylable components. See the CustomForm documentation for more information.
+---
+<div class="input-group">
+	<label for="{{id}}">{{label}}</label>
+  <div class="field">
+  	<select name="{{id}}" id="{{id}}">
+  		<option value="1">Option 1</option>
+  		<option value="2">Option 2</option>
+  		<option value="3" selected="selected">Option 3</option>
+  		<option value="4">Option 4</option>
+  		<option value="5">Option 5</option>
+  	</select>
+  </div>
+</div>
