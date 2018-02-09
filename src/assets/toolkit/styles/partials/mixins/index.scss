@@ -3,6 +3,7 @@
 @import 'layout';
 @import 'lists';
 @import 'text';
+@import 'icons';
 @mixin media-protector() {
     &::after {
         display: block;
