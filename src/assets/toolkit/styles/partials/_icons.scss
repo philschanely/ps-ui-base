@@ -1,5 +1,5 @@
 &.icon {
-    @extend .far; // fontawesome light library by default
+    @extend .fas; // fontawesome light library by default
     font-size: $size-icon;
     display: inline-block;
 
@@ -85,7 +85,7 @@
     }
 
     &.icon--edit {
-        @extend .fa-pencil;
+        @extend .fa-edit;
     }
 
     &.icon--close {
@@ -93,7 +93,7 @@
     }
 
     &.icon--close-box {
-        @extend .fa-times-square;
+        @extend .fa-window-close;
     }
 
     &.icon--close-circle {
@@ -117,6 +117,14 @@
         @extend .fa-file;
     }
 
+    &.icon--file-audio {
+        @extend .fa-file-audio;
+    }
+
+    &.icon--file-code {
+        @extend .fa-file-code;
+    }
+
     &.icon--file-doc {
         @extend .fa-file-alt;
     }
@@ -125,12 +133,24 @@
         @extend .fa-file-excel;
     }
 
+    &.icon--file-image {
+        @extend .fa-file-image;
+    }
+
     &.icon--file-pdf {
         @extend .fa-file-pdf;
     }
 
-    &.icon--file-error {
-        @extend .fa-file-exclamation;
+    &.icon--file-ppt {
+        @extend .fa-file-powerpoint;
+    }
+
+    &.icon--file-word {
+        @extend .fa-file-word;
+    }
+
+    &.icon--file-video {
+        @extend .fa-file-video;
     }
 
     &.icon--folder {
@@ -225,7 +245,7 @@
     }
 
     &.icon--swap {
-        @extend .fa-exchange;
+        @extend .fa-exchange-alt;
     }
 
     &.icon--raq {
@@ -290,15 +310,6 @@
 
     &.icon--comment {
         @extend .fa-comment;
-    }
-
-    &.icon--diamond {
-        @extend .fa-diamond;
-    }
-
-    &.icon--diamond-solid {
-        @extend .fa-diamond;
-        @include fas;
     }
 
     &.icon--ellipsis {
