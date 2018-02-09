@@ -114,6 +114,7 @@
 @mixin input() {
     @include bbox;
     @include text-body;
+    display: block;
     width: 100%;
     padding-top: $pad-top-body - 1px;
     padding-bottom: $pad-top-body - 1px;
