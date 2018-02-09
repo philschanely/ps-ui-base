@@ -1,0 +1,33 @@
+@mixin fa-base() {
+    // From fontawesome _core
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+@mixin fa() {
+    @include fa-base;
+    // From fontawesome fa-solid
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+@mixin far() {
+    @include fa-base;
+    // From fontawesome fa-regular
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 400;
+}
+@mixin fas() {
+    @include fa-base;
+    // From fontawesome fa-solid
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+}
+@mixin fab() {
+    @include fa-base;
+    // From fontawesome fa-brands
+    font-family: 'Font Awesome 5 Brands';
+}

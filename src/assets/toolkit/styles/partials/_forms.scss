@@ -145,7 +145,7 @@ input[type="radio"] {
     @include input-toggle;
 
     & + label::before {
-        @include fal;
+        @include far;
         content: fa-content($fa-var-circle);
     }
 
@@ -160,7 +160,7 @@ input[type="checkbox"] {
     @include input-toggle;
 
     & + label::before {
-        @include fal;
+        @include far;
         content: fa-content($fa-var-square);
     }
 

@@ -1,0 +1,23 @@
+---
+notes: |
+    Icon labels can be used for field labels using any icon desired. Note that the `label` elements can be colored using any of the common application color modifiers such as `--success` and `--accent`
+---
+<form class="form--login">
+    <ul class="form__group--icon-labels">
+        <li>
+            <label class="label--success"><i title="Enter your email" class="icon icon--email"></i></label>
+            <div class="field">
+                <input type="email" placeholder="your@email.com" />
+            </div>
+        </li>
+        <li>
+            <label class="label--accent"><i title="Enter your password" class="icon icon--key"></i></label>
+            <div class="field">
+                <input type="password" />
+            </div>
+        </li>
+    </ul>
+    <div class="form__footer">
+        <button type="submit" class="btn--success">Log in</button>
+    </div>
+</form>
