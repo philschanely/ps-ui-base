@@ -1,25 +1,29 @@
 @import '../../../../node_modules/reset-css/_reset.scss';
-@import 'fontawesome/fontawesome.scss';
 
+// Local variables and mixins
 @import 'partials/_vars';
-
 @import 'partials/mixins/index';
 
+// Icons from fontawesome free
+@import 'fontawesome/fontawesome.scss';
+@import 'partials/_icons';
+
+// Basic styles
 @import 'partials/_basics';
 @import 'partials/_text';
 @import 'partials/_layout';
 @import 'partials/_lists';
-@import 'partials/_nav';
 @import 'partials/_tiles';
+@import 'partials/_nav';
+@import 'partials/_chips';
 @import 'partials/_forms';
 @import 'partials/_buttons';
-@import 'partials/_icons';
-@import 'partials/_chips';
 
+// Extensions
 @import 'partials/_dropdown';
 @import 'partials/_modal';
 
+// App-specific componeents
 @import 'app/_header';
 @import 'app/_footer';
-
 @import 'pages/_public';
