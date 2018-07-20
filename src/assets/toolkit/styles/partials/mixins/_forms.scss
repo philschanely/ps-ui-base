@@ -346,8 +346,8 @@
     height: 20px;
     transition: 0.1s all linear;
     position: absolute;
-    top: 2px;
-    left: $pad / 2;
+    top: 4px;
+    left: $pad / 2 - 4px;
     text-align: left;
     font-size: $size-icon;
     @media screen and (min-width: $width-tablet) {
